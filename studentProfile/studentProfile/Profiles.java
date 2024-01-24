@@ -12,19 +12,19 @@ import java.util.Scanner;
 public class Profiles {
 	String name;
     int age;
-    String[] subjects;
-    double[] scores;
-    char[] grades;
+    String subjects;
+    double scores;
+    char grades;
     boolean promoted;
 	
 	public Profiles(String name, int age, double score, char grades, boolean promoted, String subject) {
    
 		this.name = name;
         this.age = age;
-        this.scores = new double[9];
-        this.grades = new char[9];
+        this.scores = score;
+        this.grades = grades;
         this.promoted = promoted;
-        this.subjects = new String[9];
+        this.subjects = subject;
     }
 	
 	public void setValuesFromInput() {
@@ -82,7 +82,7 @@ public class Profiles {
 	}
 
 	private char calculateGrades(double scores) {
-		if (scores >= 85 && scores <= 100) {
+		if (scores >= 5.0 && scores <= 4.5) {
             return 'A';
         } else if (scores >= 70 && scores <= 84) {
             return 'B';
@@ -98,16 +98,4 @@ public class Profiles {
             return ' ';
         }
 	}
-		public static void main(String[] args) {
-		
-			Profiles studentProfile = new Profiles ("", 0, 0.0, 'A',false, "");
-		
-			studentProfile.setValuesFromInput();
-			
-			System.out.println("Subject-wise Scores and Grades:");
-	        for (int i = 0; i < studentProfile.subjects.length; i++) {
-	            System.out.println(studentProfile.subjects[i] + ": Score - " + studentProfile.scores[i] +
-	            	", Grade - " + studentProfile.grades[i]);
-	        	}
-		}
 }
