@@ -3,7 +3,7 @@ package studentProfile;
 public class Use_case {
     public static void main(String[] args) {
 
-        Profiles studentProfile = new Profiles ("", 0, 0.0, 'A',false, "");
+        Profiles studentProfile = new Profiles ("", 0, "",false, "");
 
         studentProfile.setValuesFromInput();
 
