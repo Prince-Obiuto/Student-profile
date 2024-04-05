@@ -3,11 +3,7 @@ package studentProfile;
 import java.util.Scanner;
 
 /**
-<<<<<<< HEAD
  * @author Prince-Obiuto
-=======
- * @author HP
->>>>>>> origin/main
  *
  */
 public class Profiles {
