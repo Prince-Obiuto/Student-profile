@@ -6,27 +6,28 @@ package studentProfile;
 import java.util.Scanner;
 
 /**
- * @author HP
+ * @author Prince-Obiuto
  *
  */
 public class Profiles {
 	String name;
-    String subjects;
+    String[] courses;
+    char[] grades;
     double gpa;
-    String cgpa;
-	char scores;
-    boolean promoted;
+	double cgpa;
+	int courseUnit;
 	
-	public Profiles(String name, double score, char grades, boolean promoted, String subject) {
+	public Profiles(String name, String courses, char grades, double gpa, double cgpa, int courseUnit) {
    
 		this.name = name;
-        this.scores = score;
-        this.class = gpa;
-        this.promoted = promoted;
-        this.subjects = subject;
+        this.courses = new String[12];
+        this.grades = new char[12];
+        this.gpa = gpa;
+        this.cgpa = cgpa;
+		this.courseUnit = courseUnit;
     }
 	
-	public void setValuesFromInput() {
+	public void takeValuesFromInput() {
 		Scanner scanner = new Scanner(System.in);
 
 		do {
@@ -34,24 +35,23 @@ public class Profiles {
 			this.name = scanner.nextLine();
 		
 			if (this.name.trim().isEmpty()) {
-				System.out.println("Invalid Input!" + "Try again");
+				System.out.println("Invalid Input!" + "/n Try again");
 			}
 		} while(this.name.trim().isEmpty());
 
 		do {
-			for (int i = 0; i < subjects.length; i++) {
-				do {
-					System.out.println("Enter Name of Subject" + (i + 1));
+            int i;
+            for (i = 0; i < courses.length; i++) {
+                System.out.println("Enter Course Name and Code of course" + i);
+                this.courses[i] = scanner.nextLine();
+                if (this.courses[i].trim().isEmpty()) {
+					System.out.println("Invalid Input!" + "/n Try again");
+					System.out.println("If number of attainable courses is less than 12, please input N/A until all available spaces are occupied");
+                }
+            } while(this.courses[i].trim().isEmpty())
 
-					if (this.grades[i] == ' ') {
-						System.out.println("Invalid score");
-						this.subjects[i] = scanner.nextLine();
-
-						this.scores[i] = scanner.nextDouble();
-
-						this.grades[i] = calculateClass(this.scores[i]);
-					}
-				} while (this.grades[i] == ' ');
+            this.grades[i] = scanner.next ;
+			} while (this.grades[i] == ' ');
 
 				System.out.println("Enter Student's Score for Subject" + (i + 1));
 				while (!scanner.hasNextDouble()) {
@@ -64,17 +64,9 @@ public class Profiles {
 		}
 	}
 
-	private String calculateClass(double scores) {
-		if (scores >= 5.0 && scores <= 4.5) {
-            return "First Class";
-        } else if (scores >= 4.49 && scores <= 3.5) {
-            return "Second Class";
-        } else if (scores >= 3.49 && scores <= 2.5) {
-            return "Third Class";
-        } else if (scores >= 2.49 && scores <= 2.0) {
-            return "Pass";
-        } else {
-            return " ";
-        }
+	private int valueOfCourseUnit(this.grades[i]){
+		if(grades = 'a', 'A'){
+			return 5;
+
 	}
 }

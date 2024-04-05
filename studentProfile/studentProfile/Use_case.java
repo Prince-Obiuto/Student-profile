@@ -3,14 +3,14 @@ package studentProfile;
 public class Use_case {
     public static void main(String[] args) {
 
-        Profiles studentProfile = new Profiles ("", 0, "",false, "");
+        Profiles studentDetails = new Profiles ("", "",false, "");
 
-        studentProfile.setValuesFromInput();
+        studentDetails.setValuesFromInput();
 
         System.out.println("Subject-wise Scores and Grades:");
-        for (int i = 0; i < studentProfile.subjects.length; i++) {
-            System.out.println(studentProfile.subjects[i] + ": Score - " + studentProfile.scores +
-                    ", Grade - " + studentProfile.grades[i]);
+        for (int i = 0; i < studentDetails.courses[i].length; i++) {
+            System.out.println(studentDetails.subjects[i] + ": Score - " + studentDetails.scores +
+                    ", Grade - " + studentDetails.grades[i]);
         }
     }
 }
