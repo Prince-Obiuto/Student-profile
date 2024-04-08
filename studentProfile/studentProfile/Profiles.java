@@ -65,8 +65,7 @@ public class Profiles {
 	}
 
 	private int valueOfCourseUnit(this.grades[i]){
-		if(grades = 'a', 'A'){
-			return 5;
+		
 
 	}
 }
