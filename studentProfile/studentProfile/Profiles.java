@@ -65,7 +65,7 @@ public class Profiles {
 	}
 
 	private int valueOfCourseUnit(this.grades[i]){
-		
+
 
 	}
 }
