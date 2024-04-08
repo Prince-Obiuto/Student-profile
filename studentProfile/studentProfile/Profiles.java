@@ -5,6 +5,8 @@ package studentProfile;
 
 import java.util.Scanner;
 
+import static jdk.vm.ci.meta.JavaKind.Char;
+
 /**
  * @author Prince-Obiuto
  *
@@ -28,44 +30,35 @@ public class Profiles {
     }
 	
 	public void takeValuesFromInput() {
-		Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-		do {
-			System.out.println("Enter Student's Name");	
-			this.name = scanner.nextLine();
-		
-			if (this.name.trim().isEmpty()) {
-				System.out.println("Invalid Input!" + "/n Try again");
-			}
-		} while(this.name.trim().isEmpty());
+        do {
+            System.out.println("Enter Student's Name");
+            this.name = scanner.nextLine();
 
-		do {
-            int i;
+            if (this.name.trim().isEmpty()) {
+                System.out.println("Invalid Input!" + "/n Try again");
+            }
+        } while (this.name.trim().isEmpty());
+
+        int i;
+        do {
             for (i = 0; i < courses.length; i++) {
                 System.out.println("Enter Course Name and Code of course" + i);
                 this.courses[i] = scanner.nextLine();
                 if (this.courses[i].trim().isEmpty()) {
-					System.out.println("Invalid Input!" + "/n Try again");
-					System.out.println("If number of attainable courses is less than 12, please input N/A until all available spaces are occupied");
+                    System.out.println("Invalid Input!" + "/n Try again");
+                    System.out.println("If number of attainable courses is less than 12, please input N/A until all available spaces are occupied");
                 }
-            } while(this.courses[i].trim().isEmpty())
+            }
+        } while (this.courses[i].trim().isEmpty());
 
-            this.grades[i] = scanner.next ;
-			} while (this.grades[i] == ' ');
+        this.grades[i] = Char.valueOf(scanner.nextLine()).getTypeChar();
 
-				System.out.println("Enter Student's Score for Subject" + (i + 1));
-				while (!scanner.hasNextDouble()) {
-					System.out.println("Invalid Input");
-					scanner.next();
-				}
-			}
 
-			scanner.close();
-		}
-	}
+        scanner.close();
 
-	private int valueOfCourseUnit(this.grades[i]){
-		
 
-	}
-}
+
+        }
+    }
