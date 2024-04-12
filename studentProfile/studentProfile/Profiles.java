@@ -12,40 +12,42 @@ import static jdk.vm.ci.meta.JavaKind.Char;
  *
  */
 public class Profiles {
-	String name;
-    String[] courses;
-    char[] grades;
-    double gpa;
+    String[] course;
+    int units;
+    String[] grades;
+    double gpa1;
+    double gpa2;
 	double cgpa;
-	int courseUnit;
 	
-	public Profiles(String name, String courses, char grades, double gpa, double cgpa, int courseUnit) {
-   
-		this.name = name;
-        this.courses = new String[12];
-        this.grades = new char[12];
-        this.gpa = gpa;
+	public Profiles(String course, int units, String grades, double gpa1, double gpa2, double cgpa) {
+
+        this.course = new String[12];
+        this.units = units;
+        this.grades = new String[12];
+        this.gpa1 = gpa1;
+        this.gpa2 = gpa2;
         this.cgpa = cgpa;
-		this.courseUnit = courseUnit;
     }
 	
-	public void takeValuesFromInput() {
+	public void setCourses() {
         Scanner scanner = new Scanner(System.in);
-
+        int i;
         do {
-            System.out.println("Enter Student's Name");
-            this.name = scanner.nextLine();
+            for (i = 0; i < course.length; i++)
+                System.out.println("Enter Course Name and code");
+                course = scanner.nextLine;
 
             if (this.name.trim().isEmpty()) {
                 System.out.println("Invalid Input!" + "/n Try again");
             }
         } while (this.name.trim().isEmpty());
+    }
 
-        int i;
+    public void setUnits(){
         do {
             for (i = 0; i < courses.length; i++) {
                 System.out.println("Enter Course Name and Code of course" + i);
-                this.courses[i] = scanner.nextLine();
+                this.course[i] = scanner.nextLine();
                 if (this.courses[i].trim().isEmpty()) {
                     System.out.println("Invalid Input!" + "/n Try again");
                     System.out.println("If number of attainable courses is less than 12, please input N/A until all available spaces are occupied");
