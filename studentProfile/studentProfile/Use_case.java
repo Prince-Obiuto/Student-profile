@@ -5,7 +5,7 @@ public class Use_case {
 
         Profiles studentDetails = new Profiles ("", ""," ", 0.0);
 
-        studentDetails.takeValuesFromInput();
+        studentDetails;
 
         System.out.println("Subject-wise Scores and Grades:");
         for (int i = 0; i < studentDetails.courses[i].length; i++) {
